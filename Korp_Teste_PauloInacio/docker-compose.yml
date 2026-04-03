@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: korp_postgres
+    environment:
+      POSTGRES_USER: korp
+      POSTGRES_PASSWORD: korp123
+      POSTGRES_DB: korpdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U korp"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  estoque-api:
+    build: ./backend/Estoque.API
+    container_name: korp_estoque
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Host=postgres;Database=korpdb;Username=korp;Password=korp123
+      - ASPNETCORE_URLS=http://+:5001
+      - Claude_API=${Claude_API}
+      - FaturamentoApi__BaseUrl=http://faturamento-api:5002
+    ports:
+      - "5001:5001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  faturamento-api:
+    build: ./backend/Faturamento.API
+    container_name: korp_faturamento
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Host=postgres;Database=korpdb;Username=korp;Password=korp123
+      - EstoqueApi__BaseUrl=http://estoque-api:5001
+      - ASPNETCORE_URLS=http://+:5002
+    ports:
+      - "5002:5002"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: korp_frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - estoque-api
+      - faturamento-api
+
+volumes:
+  postgres_data:

@@ -1,0 +1,12 @@
+{
+  "/api/produtos": {
+    "target": "http://localhost:5001",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/notasfiscais": {
+    "target": "http://localhost:5002",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

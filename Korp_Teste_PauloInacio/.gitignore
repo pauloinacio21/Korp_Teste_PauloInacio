@@ -1,0 +1,20 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Angular
+**/node_modules/
+**/dist/
+.angular/
+
+# Docker volumes
+postgres_data/
+
+# Environment
+.env
+*.env.local
+*.md
+!README.md

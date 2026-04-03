@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estoque.API", "backend\Estoque.API\Estoque.API.csproj", "{95BE4B12-146F-B61D-8151-FB5D918590C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faturamento.API", "backend\Faturamento.API\Faturamento.API.csproj", "{617C707B-8008-CDDC-4715-EE8EA273961E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95BE4B12-146F-B61D-8151-FB5D918590C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95BE4B12-146F-B61D-8151-FB5D918590C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95BE4B12-146F-B61D-8151-FB5D918590C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95BE4B12-146F-B61D-8151-FB5D918590C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617C707B-8008-CDDC-4715-EE8EA273961E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617C707B-8008-CDDC-4715-EE8EA273961E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617C707B-8008-CDDC-4715-EE8EA273961E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617C707B-8008-CDDC-4715-EE8EA273961E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95BE4B12-146F-B61D-8151-FB5D918590C5} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
+		{617C707B-8008-CDDC-4715-EE8EA273961E} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24EE2A1A-1E6C-42F1-9B63-9B29BD8B35BC}
+	EndGlobalSection
+EndGlobal
